@@ -13,15 +13,29 @@ button.addEventListener("click", () => {
         return;
     } else {
         antwoord.textContent = vraag.value + ", " + array[Math.floor(Math.random() * array.length)];
-        array.style.color = [math];
+        antwoord.style.color = "#" + Math.floor(Math.random() * 1991).toString(16);
         output.textContent = "";
         divvy.classList.toggle("hidden");
         divvyA.classList.toggle("shown");
+        divvyA.animate([
+            { transform: 'translateY(-100%)', opacity: 0 },
+            { transform: 'translateY(0)', opacity: 1 }
+        ], {
+            duration: 500,
+            easing: 'ease-out'
+        });
     }
 });
 
 buttonA.addEventListener("click", () => {
     divvy.classList.toggle("hidden");
     divvyA.classList.toggle("shown");
+    divvy.animate([
+        { transform: 'translateY(-100%)', opacity: 0 },
+        { transform: 'translateY(0)', opacity: 1 }
+    ], {
+        duration: 500,
+        easing: 'ease-out'
+    });
 });
 
